@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.tj.a20190427_android_practice.R;
 import com.tj.a20190427_android_practice.datas.PizzaStore;
 
@@ -43,6 +44,10 @@ public class PizzaStoreAdapter extends ArrayAdapter<PizzaStore> {
         ImageView logoImgView = row.findViewById(R.id.logoImgView);
         TextView nameTxt = row.findViewById(R.id.nameTxt);
 
+
+        Glide.with(mContext).load(storeData.imageURL).into(logoImgView);
+
+
         nameTxt.setText(storeData.storeName);
 
 
@@ -65,6 +70,10 @@ public class PizzaStoreAdapter extends ArrayAdapter<PizzaStore> {
         TextView nameTxt = row.findViewById(R.id.nameTxt);
         TextView locationTxt = row.findViewById(R.id.locationTxt);
         TextView openTimeTxt = row.findViewById(R.id.openTimeTxt);
+
+
+        Glide.with(mContext).load(storeData.imageURL).into(logoImgView);
+
 
         nameTxt.setText(storeData.storeName);
         locationTxt.setText(String.format("(%s)", storeData.location));
